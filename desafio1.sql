@@ -5,7 +5,7 @@ CREATE DATABASE SpotifyClone;
 CREATE TABLE SpotifyClone.Subscriptions(
   subscription_id INT PRIMARY KEY AUTO_INCREMENT,
   subscription_name VARCHAR(30) NOT NULL,
-  subscription_value DECIMAL(3,2) NOT NULL,
+  subscription_value DECIMAL(3,2) NOT NULL
 ) ENGINE=InnoDB;
 
 INSERT INTO
@@ -18,11 +18,11 @@ VALUES
 
 CREATE TABLE SpotifyClone.Artists(
   artist_id INT PRIMARY KEY AUTO_INCREMENT,
-  artist_name VARCHAR(50) NOT NULL,
+  artist_name VARCHAR(50) NOT NULL
 ) ENGINE=InnoDB;
 
 INSERT INTO
-  SpotifyClone.Artists
+  SpotifyClone.Artists(artist_name)
 VALUES
   ('Walter Phoenix'), -- id: 1
   ('Peter Strong'), -- id: 2
@@ -41,18 +41,18 @@ CREATE TABLE SpotifyClone.Users(
 ) ENGINE=InnoDB;
 
 INSERT INTO
-  SpotifyClone.Users
+  SpotifyClone.Users(user_name, user_age, subscription_id, subscription_date)
 VALUES
-  ('Thati', 23, 4, 2019-10-20), -- id: 1
-  ('Cintia', 35, 2, 2017-12-30), -- id: 2
-  ('Bill', 20, 3, 2019-06-05), -- id: 3
-  ('Roger', 45, 1, 2020-05-13), -- id: 4
-  ('Norman', 58, 1, 2017-02-17), -- id: 5
-  ('Patrick', 33, 2, 2017-01-06), -- id: 6
-  ('Vivian', 26, 3, 2018-01-05), -- id: 7
-  ('Carol', 19, 3, 2018-02-14), -- id: 8
-  ('Angelina', 42, 2, 2018-04-29), -- id: 9
-  ('Paul', 46, 2, 2017-01-17); -- id: 10
+  ('Thati', 23, 4, '2019-10-20'), -- id: 1
+  ('Cintia', 35, 2, '2017-12-30'), -- id: 2
+  ('Bill', 20, 3, '2019-06-05'), -- id: 3
+  ('Roger', 45, 1, '2020-05-13'), -- id: 4
+  ('Norman', 58, 1, '2017-02-17'), -- id: 5
+  ('Patrick', 33, 2, '2017-01-06'), -- id: 6
+  ('Vivian', 26, 3, '2018-01-05'), -- id: 7
+  ('Carol', 19, 3, '2018-02-14'), -- id: 8
+  ('Angelina', 42, 2, '2018-04-29'), -- id: 9
+  ('Paul', 46, 2, '2017-01-17'); -- id: 10
 
 CREATE TABLE SpotifyClone.Albums(
   album_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -63,7 +63,7 @@ CREATE TABLE SpotifyClone.Albums(
 ) ENGINE=InnoDB;
 
 INSERT INTO
-  SpotifyClone.Albums
+  SpotifyClone.Albums(album_title, albums_year_release, artist_id)
 VALUES
   ('Envious', 1990, 1), -- id: 1
   ('Exuberant', 1993, 1), -- id: 2
@@ -78,14 +78,14 @@ VALUES
 
 CREATE TABLE SpotifyClone.Songs(
   song_id INT PRIMARY KEY AUTO_INCREMENT,
-  song_name VARCHAR(50) NOT NULL,
+  song_title VARCHAR(50) NOT NULL,
   song_length_seconds INT NOT NULL,
   album_id INT NOT NULL,
   FOREIGN KEY (album_id) REFERENCES SpotifyClone.Albums(album_id)
-) ENGINE=InnoDB
+) ENGINE=InnoDB;
 
 INSERT INTO
-  SpotifyClone.Songs
+  SpotifyClone.Songs(song_title, song_length_seconds, album_id)
 VALUES
   ('Soul For Us', 200, 1), -- id: 1
   ('Reflections Of Magic', 163, 1), -- id: 2
@@ -138,7 +138,7 @@ CREATE TABLE SpotifyClone.Reproduction_Histories(
 ) ENGINE=InnoDB;
 
 INSERT INTO
-  SpotifyClone.Reproduction_Histories
+  SpotifyClone.Reproduction_Histories(user_id, song_id, reproduction_datetime)
 VALUES
   (1, 36, '2020-02-28 10:45:55'),
   (1, 25, '2020-05-02 05:30:35'),
@@ -188,7 +188,7 @@ CREATE TABLE SpotifyClone.Following(
 ) ENGINE=InnoDB;
 
 INSERT INTO
-  SpotifyClone.Following
+  SpotifyClone.Following(user_id, artist_id)
 VALUES
   (1, 1),
   (1, 4),
