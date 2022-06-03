@@ -1,6 +1,6 @@
 SELECT
 	son.song_title AS 'cancao',
-    COUNT(DISTINCT usr.user_id) AS 'reproducoes'
+  COUNT(DISTINCT usr.user_id) AS 'reproducoes'
 FROM
 	SpotifyClone.Songs AS son
 INNER JOIN
@@ -15,5 +15,5 @@ GROUP BY
 	son.song_title
 ORDER BY
 	reproducoes DESC,
-    cancao ASC
+  cancao ASC
 LIMIT 2;
