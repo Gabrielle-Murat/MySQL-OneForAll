@@ -178,3 +178,37 @@ VALUES
   (10, 21, '2017-12-04 05:33:43'),
   (10, 12, '2017-07-27 05:24:49'),
   (10, 13, '2017-12-25 01:03:57');
+
+CREATE TABLE SpotifyClone.Following(
+  user_id INT NOT NULL,
+  artist_id INT NOT NULL,
+  PRIMARY KEY (user_id, artist_id),
+  FOREIGN KEY (user_id) REFERENCES SpotifyClone.Users(user_id),
+  FOREIGN KEY (artist_id) REFERENCES SpotifyClone.Artists(artist_id)
+) ENGINE=InnoDB;
+
+INSERT INTO
+  SpotifyClone.Following
+VALUES
+  (1, 1),
+  (1, 4),
+  (1, 3),
+  (2, 1),
+  (2, 3),
+  (3, 2),
+  (3, 1),
+  (4, 4),
+  (5, 5),
+  (5, 6),
+  (6, 6),
+  (6, 3),
+  (6, 1),
+  (7, 2),
+  (7, 5),
+  (8, 1),
+  (8, 5),
+  (9, 6),
+  (9, 4),
+  (9, 3),
+  (10, 2),
+  (10, 6);
