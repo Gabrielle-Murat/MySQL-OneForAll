@@ -53,3 +53,25 @@ VALUES
   ('Carol', 19, 3, 2018-02-14), -- id: 8
   ('Angelina', 42, 2, 2018-04-29), -- id: 9
   ('Paul', 46, 2, 2017-01-17); -- id: 10
+
+CREATE TABLE SpotifyClone.Albums(
+  album_id INT PRIMARY KEY AUTO_INCREMENT,
+  album_title VARCHAR(50) NOT NULL,
+  albums_year_release YEAR NOT NULL,
+  artist_id INT NOT NULL,
+  FOREIGN KEY (artist_id) REFERENCES SpotifyClone.Artists(artist_id)
+) ENGINE=InnoDB;
+
+INSERT INTO
+  SpotifyClone.Albums
+VALUES
+  ('Envious', 1990, 1), -- id: 1
+  ('Exuberant', 1993, 1), -- id: 2
+  ('Hallowed Steam', 1995, 2), -- id: 3
+  ('Incandescent', 1998, 3), -- id: 4
+  ('Temporary Culture', 2001, 4), -- id: 5
+  ('Library of liberty', 2003, 4), -- id: 6
+  ('Chained Down', 2007, 5), -- id: 7
+  ('Cabinet of fools', 2012, 5), -- id: 8
+  ('No guarantees', 2015, 5), -- id: 9
+  ('Apparatus', 2015, 6); -- id: 10
