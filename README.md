@@ -1,6 +1,6 @@
 <!-- WIP -->
 
-<h1 align="center">Projeto MySQL - All For One</h1>
+<h1 align="center">Projeto MySQL - One For All</h1>
 
 <p align="center"> 
   <img src="gif/mysql.jpg" alt="MySQL Logo" width="40%">
